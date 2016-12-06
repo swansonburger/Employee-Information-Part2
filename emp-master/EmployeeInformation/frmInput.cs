@@ -90,16 +90,16 @@ namespace EmployeeInformation
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            //Creates new frmOutput
-            frmOutput newOutputForm = new frmOutput();
-            newOutputForm.filePath = path;
-            newOutputForm.Show();
-
-            //Close employeeStreamWriter
+            //Close StreamWriter
             employeeStreamWriter.Close();
+
+            //Creates new frmOutput
+            frmOutput outputForm = new frmOutput();
+            outputForm.filePath = path;
 
             //Hide input form
             this.Hide();
+            outputForm.Show();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
